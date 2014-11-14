@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StepBar">
+        <attr name="step" format="integer" />
+        <attr name="currentStep" format="integer" />
+        <attr name="stepArray" format="reference" />
+        <attr name="barHeight" format="dimension|reference" />
+        <attr name="cornerRadius" format="dimension|reference" />
+        <attr name="circleRadius" format="dimension|reference" />
+        <attr name="colorA" format="color" />
+        <attr name="colorB" format="color" />
+        <attr name="textPadding" format="dimension|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

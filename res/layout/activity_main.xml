@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bar="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <com.example.test.StepBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        bar:step="8"
+        bar:currentStep="0"
+        bar:cornerRadius="5dp"
+        bar:barHeight="2dp"
+        bar:circleRadius="10dp"
+        bar:textPadding="8dp"
+        bar:textSize="14sp"
+        bar:stepArray="@array/registerStep"
+        bar:colorA="#cccccc"
+        bar:colorB="#FF6600"/>
+    
+    <FrameLayout 
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"/>
+
+</LinearLayout>

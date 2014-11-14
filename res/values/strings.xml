@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Test</string>
+    <string-array name="registerStep">
+        <item>填写手机号</item>
+        <item>验证手机号</item>
+        <item>设置密码</item>
+    </string-array>
+
+</resources>
