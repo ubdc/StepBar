@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="StepBar">
-        <attr name="step" format="integer" />
+        <!-- 总共有多少步奏，如果不设置，则默认为1 -->
+        <attr name="stepCount" format="integer" />
+        <!-- 当前是第几步，从0开始 -->
         <attr name="currentStep" format="integer" />
+        <!-- 每一步下面的文字组成的字符串列表 -->
         <attr name="stepArray" format="reference" />
+        <!-- 中间的进度条的高度(进度条其实是一个矩形) -->
         <attr name="barHeight" format="dimension|reference" />
+        <!-- 进度条其实是一个矩形，这个属性是设置它的圆角半径 -->
         <attr name="cornerRadius" format="dimension|reference" />
+        <!-- 节点小圆圈的半径 -->
         <attr name="circleRadius" format="dimension|reference" />
+        <!-- 没有选中的步骤的颜色 -->
         <attr name="colorA" format="color" />
+        <!-- 选中的步骤的颜色 -->
         <attr name="colorB" format="color" />
+        <!-- 每一步底下的文字和小圆圈最底部之间距离 -->
         <attr name="textPadding" format="dimension|reference"/>
+        <!-- 每一步底下的文字的大小 -->
         <attr name="textSize" format="dimension|reference"/>
+        <!-- 小圆圈内数字的颜色 -->
+        <attr name="stepNumberColor" format="color|reference"/>
+        <!-- 小圆圈内数字的大小 -->
+        <attr name="stepNumberSize" format="dimension|reference"/>
     </declare-styleable>
 </resources>

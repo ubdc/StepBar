@@ -6,19 +6,23 @@
     android:orientation="vertical" >
     
     <com.example.test.StepBar
+        android:id="@+id/stepBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        bar:step="8"
+        bar:stepCount="3"
         bar:currentStep="0"
         bar:cornerRadius="5dp"
-        bar:barHeight="2dp"
-        bar:circleRadius="10dp"
+        bar:barHeight="4dp"
+        bar:circleRadius="15dp"
         bar:textPadding="8dp"
         bar:textSize="14sp"
+        bar:stepNumberColor="#ffffff"
+        bar:stepNumberSize="14sp"
         bar:stepArray="@array/registerStep"
         bar:colorA="#cccccc"
-        bar:colorB="#FF6600"/>
+        bar:colorB="#FF6600"
+        android:background="#00ff00"/>
     
     <FrameLayout 
         android:id="@+id/container"

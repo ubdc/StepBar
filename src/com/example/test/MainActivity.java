@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
 	FragmentManager fm;
+	StepBar stepBar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,19 @@ public class MainActivity extends FragmentActivity {
 		fm.beginTransaction()
 		.add(R.id.container, new A())
 		.commit();
+		stepBar = (StepBar) findViewById(R.id.stepBar);
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			if (fm.getBackStackEntryCount() > 0) {
+				stepBar.stepTo(fm.getBackStackEntryCount() - 1);
+				fm.popBackStack();
+				return true;
+			}
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 	
 	class A extends Fragment implements OnClickListener {
@@ -45,6 +60,7 @@ public class MainActivity extends FragmentActivity {
 			.replace(R.id.container, new B())
 			.addToBackStack(null)
 			.commit();
+			stepBar.stepTo(1);
 		}
 	}
 	
@@ -66,6 +82,7 @@ public class MainActivity extends FragmentActivity {
 			.replace(R.id.container, new C())
 			.addToBackStack(null)
 			.commit();
+			stepBar.stepTo(2);
 		}
 	}
 	

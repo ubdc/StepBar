@@ -65,6 +65,10 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int currentStep=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int stepArray=0x7f010002;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -72,11 +76,20 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int step=0x7f010000;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        public static final int stepCount=0x7f010000;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static final int stepArray=0x7f010002;
+        public static final int stepNumberColor=0x7f01000a;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int stepNumberSize=0x7f01000b;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -96,7 +109,8 @@ in (inches), mm (millimeters).
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int container=0x7f080000;
+        public static final int container=0x7f080001;
+        public static final int stepBar=0x7f080000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -145,8 +159,10 @@ in (inches), mm (millimeters).
            <tr><td><code>{@link #StepBar_colorB com.example.test:colorB}</code></td><td></td></tr>
            <tr><td><code>{@link #StepBar_cornerRadius com.example.test:cornerRadius}</code></td><td></td></tr>
            <tr><td><code>{@link #StepBar_currentStep com.example.test:currentStep}</code></td><td></td></tr>
-           <tr><td><code>{@link #StepBar_step com.example.test:step}</code></td><td></td></tr>
            <tr><td><code>{@link #StepBar_stepArray com.example.test:stepArray}</code></td><td></td></tr>
+           <tr><td><code>{@link #StepBar_stepCount com.example.test:stepCount}</code></td><td></td></tr>
+           <tr><td><code>{@link #StepBar_stepNumberColor com.example.test:stepNumberColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #StepBar_stepNumberSize com.example.test:stepNumberSize}</code></td><td></td></tr>
            <tr><td><code>{@link #StepBar_textPadding com.example.test:textPadding}</code></td><td></td></tr>
            <tr><td><code>{@link #StepBar_textSize com.example.test:textSize}</code></td><td></td></tr>
            </table>
@@ -156,15 +172,17 @@ in (inches), mm (millimeters).
            @see #StepBar_colorB
            @see #StepBar_cornerRadius
            @see #StepBar_currentStep
-           @see #StepBar_step
            @see #StepBar_stepArray
+           @see #StepBar_stepCount
+           @see #StepBar_stepNumberColor
+           @see #StepBar_stepNumberSize
            @see #StepBar_textPadding
            @see #StepBar_textSize
          */
         public static final int[] StepBar = {
             0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
             0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
-            0x7f010008, 0x7f010009
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b
         };
         /**
           <p>This symbol is the offset where the {@link com.example.test.R.attr#barHeight}
@@ -250,20 +268,6 @@ containing a value of this type.
         */
         public static final int StepBar_currentStep = 1;
         /**
-          <p>This symbol is the offset where the {@link com.example.test.R.attr#step}
-          attribute's value can be found in the {@link #StepBar} array.
-
-
-          <p>Must be an integer value, such as "<code>100</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.example.test:step
-        */
-        public static final int StepBar_step = 0;
-        /**
           <p>This symbol is the offset where the {@link com.example.test.R.attr#stepArray}
           attribute's value can be found in the {@link #StepBar} array.
 
@@ -273,6 +277,45 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.example.test:stepArray
         */
         public static final int StepBar_stepArray = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.example.test.R.attr#stepCount}
+          attribute's value can be found in the {@link #StepBar} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.example.test:stepCount
+        */
+        public static final int StepBar_stepCount = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.example.test.R.attr#stepNumberColor}
+          attribute's value can be found in the {@link #StepBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.example.test:stepNumberColor
+        */
+        public static final int StepBar_stepNumberColor = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.example.test.R.attr#stepNumberSize}
+          attribute's value can be found in the {@link #StepBar} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.example.test:stepNumberSize
+        */
+        public static final int StepBar_stepNumberSize = 11;
         /**
           <p>This symbol is the offset where the {@link com.example.test.R.attr#textPadding}
           attribute's value can be found in the {@link #StepBar} array.
